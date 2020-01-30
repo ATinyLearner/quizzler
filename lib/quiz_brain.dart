@@ -1,6 +1,6 @@
 import './question.dart';
 
-int questionNumber;
+int questionNumber = 0;
 
 class QuizBrain {
   //for encapsulation,made questionBank private by adding _
@@ -61,13 +61,22 @@ class QuizBrain {
       //Correct answer 1948
     ),
   ];
-  //also made these two functions to display answer and question
 
-  String getQuestionText(questionNumber) {
+  void nextQuestion() {
+    if (questionNumber < _questionBank.length - 1) {
+      questionNumber++;
+    } else if (questionNumber == _questionBank.length - 1) {
+      questionNumber = 0;
+    }
+  }
+
+  //also made these two functions to display answer and question
+  //as we don't need questionNumber for specific question,hence removed from below 2 functions
+  String getQuestionText() {
     return _questionBank[questionNumber].questionText;
   }
 
-  List getQuestionAnswer(questionNumber) {
+  List getQuestionAnswer() {
     return _questionBank[questionNumber].displayAnswer;
   }
 }

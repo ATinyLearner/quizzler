@@ -12,12 +12,12 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-int _questionNum = 0;
+int questionNum = 0;
 
 class _MyAppState extends State<MyApp> {
   void answerQuestion() {
     setState(() {
-      _questionNum++;
+      quizBrain.nextQuestion();
     });
   }
 
@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
                   Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Text(
-                      quizBrain.getQuestionText(_questionNum),
+                      quizBrain.getQuestionText(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 25,
@@ -49,20 +49,16 @@ class _MyAppState extends State<MyApp> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         RaisedButton(
-                            child: Text(
-                                quizBrain.getQuestionAnswer(_questionNum)[0]),
+                            child: Text(quizBrain.getQuestionAnswer()[0]),
                             onPressed: answerQuestion),
                         RaisedButton(
-                            child: Text(
-                                quizBrain.getQuestionAnswer(_questionNum)[1]),
+                            child: Text(quizBrain.getQuestionAnswer()[1]),
                             onPressed: answerQuestion),
                         RaisedButton(
-                            child: Text(
-                                quizBrain.getQuestionAnswer(_questionNum)[2]),
+                            child: Text(quizBrain.getQuestionAnswer()[2]),
                             onPressed: answerQuestion),
                         RaisedButton(
-                            child: Text(
-                                quizBrain.getQuestionAnswer(_questionNum)[3]),
+                            child: Text(quizBrain.getQuestionAnswer()[3]),
                             onPressed: answerQuestion),
                       ],
                     ),
