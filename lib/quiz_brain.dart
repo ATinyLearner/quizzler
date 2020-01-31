@@ -63,8 +63,8 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    if (questionNumber < _questionBank.length - 1) {
-      questionNumber++;
+    if (questionNumber <= _questionBank.length - 1) {
+      questionNumber = questionNumber + 1;
     }
   }
 
@@ -90,6 +90,11 @@ class QuizBrain {
     'Australia',
     '1948',
   ];
+
+  int getLength() {
+    return _questionBank.length;
+  }
+
   String geCorrAns() {
     return _answerBank[questionNumber];
   }

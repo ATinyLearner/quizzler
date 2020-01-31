@@ -3,6 +3,7 @@ import './quiz_brain.dart';
 import 'dart:io';
 
 QuizBrain quizBrain = QuizBrain();
+int questionLength = quizBrain.getLength();
 
 void main() {
   runApp(MyApp());
@@ -24,8 +25,8 @@ class _MyAppState extends State<MyApp> {
     } else {
       wrongNum++;
     }
-//    print(correctAnswer);
-//    print(userPickedAnswer);
+    print(questionNumber);
+    print(questionLength);
   }
 
   void answerQuestion(int id) {
@@ -51,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.deepOrange,
           title: Text('Quizzler'),
         ),
-        body: questionNumber < 9
+        body: questionNumber < questionLength
             ? SafeArea(
                 child: Container(
                   child: Center(
@@ -133,38 +134,38 @@ class _MyAppState extends State<MyApp> {
               )
             : SafeArea(
                 child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Text(
-                    'You did it!!',
-                    style: TextStyle(fontSize: 40),
-                  ),
-                  Text(
-                    'Score:$correctNum',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'You did it!!',
+                      style: TextStyle(fontSize: 40),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      RaisedButton(
-                        elevation: 10,
-                        onPressed: reset,
-                        child: Text('Retry'),
+                    Text(
+                      'Score:$correctNum',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
-                      RaisedButton(
-                        elevation: 10,
-                        onPressed: () => exit(0),
-                        child: Text('Exit'),
-                      ),
-                    ],
-                  ),
-                ],
-              )),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        RaisedButton(
+                          elevation: 10,
+                          onPressed: reset,
+                          child: Text('Retry'),
+                        ),
+                        RaisedButton(
+                          elevation: 10,
+                          onPressed: () => exit(0),
+                          child: Text('Exit'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
       ),
-//        backgroundColor: Colors.grey[900],
     );
   }
 }

@@ -29,4 +29,9 @@ bug:after 10 counter does not work and keep increasing
 -app does not crash
 -fully working
 
+****************************
+       Stable 2
+****************************
+-now added variable in place of number
+-only question and answer list must be updated to add more question
 
