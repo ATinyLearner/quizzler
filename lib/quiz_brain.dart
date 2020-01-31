@@ -52,12 +52,12 @@ class QuizBrain {
     ),
     Question(
       q: ' Which country is the largest producer of Bauxite?',
-      a: ['South Africa', 'North America', 'Australia', 'India'],
+      a: ['North America', 'Australia', 'South Africa', 'India'],
       //Correct answer Australia
     ),
     Question(
       q: 'When was the Reserve Bank of India taken over by the Government?',
-      a: ['1949', '1926', '1948', '1950'],
+      a: ['1949', '1926', '1950', '1948'],
       //Correct answer 1948
     ),
   ];
@@ -65,9 +65,7 @@ class QuizBrain {
   void nextQuestion() {
     if (questionNumber < _questionBank.length - 1) {
       questionNumber++;
-    } else if (questionNumber == _questionBank.length - 1) {
-      questionNumber = 0;
-    }
+    } else if (questionNumber == _questionBank.length - 1) {}
   }
 
   //also made these two functions to display answer and question
@@ -78,5 +76,21 @@ class QuizBrain {
 
   List getQuestionAnswer() {
     return _questionBank[questionNumber].displayAnswer;
+  }
+
+  List<String> _answerBank = [
+    'Euclid',
+    'Benjamin Franklin',
+    'Delhi',
+    'Multi-Party',
+    'RBI',
+    'Phloem',
+    'Bihar',
+    'Babul',
+    'Australia',
+    '1948',
+  ];
+  String geCorrAns() {
+    return _answerBank[questionNumber];
   }
 }

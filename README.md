@@ -1,16 +1,24 @@
 # quizzler
 
-a quiz app
+A minimal quiz app with some standard feature. It has multiple mcq with 4 answer choice.
 
-## Getting Started
+****************************
+      Initial Release
+****************************
+Just started up-added basic layout-Added questions dart file
 
-This project is a starting point for a Flutter application.
+****************************
+          Alpha1
+****************************
+-added quiz_brain dart
+-added new logic to count question
+-keep this app breaking from last question(App now restarts from last question)
 
-A few resources to get you started if this is your first Flutter project:
+****************************
+         Alpha2
+****************************
+-added some more functionality
+-added some fixings also
+-app now does not break instead it resets
+bug:after 10 counter does not work and keep increasing
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
