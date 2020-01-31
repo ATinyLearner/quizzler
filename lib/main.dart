@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -30,7 +31,13 @@ class _MyAppState extends State<MyApp> {
   void answerQuestion(int id) {
     checkAnswer(quizBrain.getQuestionAnswer()[id]);
     setState(() {
-      quizBrain.nextQuestion();
+      if (quizBrain.isFinished() == true) {
+        quizBrain.reset();
+        correctNum = 0;
+        wrongNum = 0;
+      } else {
+        quizBrain.nextQuestion();
+      }
     });
   }
 

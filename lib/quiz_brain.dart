@@ -1,6 +1,6 @@
 import './question.dart';
 
-int questionNumber = 0;
+int _questionNumber = 0;
 
 class QuizBrain {
   //for encapsulation,made questionBank private by adding _
@@ -63,19 +63,19 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    if (questionNumber < _questionBank.length - 1) {
-      questionNumber++;
-    } else if (questionNumber == _questionBank.length - 1) {}
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
   }
 
   //also made these two functions to display answer and question
   //as we don't need questionNumber for specific question,hence removed from below 2 functions
   String getQuestionText() {
-    return _questionBank[questionNumber].questionText;
+    return _questionBank[_questionNumber].questionText;
   }
 
   List getQuestionAnswer() {
-    return _questionBank[questionNumber].displayAnswer;
+    return _questionBank[_questionNumber].displayAnswer;
   }
 
   List<String> _answerBank = [
@@ -91,6 +91,19 @@ class QuizBrain {
     '1948',
   ];
   String geCorrAns() {
-    return _answerBank[questionNumber];
+    return _answerBank[_questionNumber];
+  }
+
+  bool isFinished() {
+    if (_questionNumber >= _questionBank.length - 1) {
+      print('Now returning true');
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNumber = 0;
   }
 }
