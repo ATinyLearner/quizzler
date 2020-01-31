@@ -13,7 +13,6 @@ Just started up-added basic layout-Added questions dart file
 -added quiz_brain dart
 -added new logic to count question
 -keep this app breaking from last question(App now restarts from last question)
-
 ****************************
          Alpha2
 ****************************
