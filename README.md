@@ -21,3 +21,12 @@ Just started up-added basic layout-Added questions dart file
 -app now does not break instead it resets
 bug:after 10 counter does not work and keep increasing
 
+****************************
+        Stable 1
+****************************
+-added end page
+-app now give retry and exit option
+-app does not crash
+-fully working
+
+
